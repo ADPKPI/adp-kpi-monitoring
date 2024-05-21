@@ -374,7 +374,7 @@ class CheckManager:
         while True:
             for server in servers:
                 for check in server['checks']:
-                    thread = Tфhread(target=self.run_check, args=(server, check,))
+                    thread = Thread(target=self.run_check, args=(server, check,))
                     self.threads.append(thread)
                     thread.start()
 
